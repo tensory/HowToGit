@@ -11,20 +11,20 @@ Let's say I'm working on a repository, and my goal today is to add my name to th
 1. Go to a directory on your computer where you'd like to maintain projects. I have a /Users/ari/Projects directory where all my random project repos live. Inside that, do not create a directory just for your new project, because "git clone" will create it for you.
 2. Clone the repository. In your terminal window, type "git clone " with a space after the word 'clone' but do not press Enter yet. 
 
-Click the "HTTP" button on the repo's page. Copy the repository URL (it starts with https and ends with .git) to the clipboard and paste it after "git clone ". Now you can press Enter.
+	Click the "HTTP" button on the repo's page. Copy the repository URL (it starts with https and ends with .git) to the clipboard and paste it after "git clone ". Now you can press Enter.
 
-For my repo on Github named "Treasury" this looks like:
-`$ git clone https://github.com/tensory/Face.git`
+	For my repo on Github named "Treasury" this looks like:
+	`$ git clone https://github.com/tensory/Face.git`
 
 3. Go into the newly created repo directory. For me this would be `/Users/ari/Projects/Treasury/`.
 
 4. Create a branch.
 
-__Voice of Experience:__ Most git tutorials do not start with branching. I think everyone should do this right away. It will save you a lot of time untangling problems on master.
+	__Voice of Experience:__ Most git tutorials do not start with branching. I think everyone should do this right away. It will save you a lot of time untangling problems on master.
 
-A branch is a version of the repository where you can make changes without messing up the main version (called "master"). If you're ever unhappy with how the changes are going in your branch, you can just delete the whole thing and start fresh, without messing up master.
+	A branch is a version of the repository where you can make changes without messing up the main version (called "master"). If you're ever unhappy with how the changes are going in your branch, you can just delete the whole thing and start fresh, without messing up master.
 
-Think of a name for your new branch that will help you remember what you intend to do with it. It's best to make a new branch any time you have a specific task in mind. Use the "git checkout" command to set up the branch.
+	Think of a name for your new branch that will help you remember what you intend to do with it. It's best to make a new branch any time you have a specific task in mind. Use the "git checkout" command to set up the branch.
 
 `$ git checkout -b edit-readme-file master`
 
@@ -45,9 +45,9 @@ So I tell git to "add" the changes:
 
 `$ git add README.md`
 
-Now if I type "git status" again, README.md has been upgraded to "staged" status, and I have no other unstaged changes. The git add command expects you to add files one by one. This means that if you make several changes, you can save just certain ones without being stuck with every change all at once. (You can also "git add" with multiple file names on the same line. Or you could just type "git add ." to add everything, but I feel that tends to cause more mistakes.)
+Now if I type `git status` again, README.md has been upgraded to "staged" status, and I have no other unstaged changes. The git add command expects you to add files one by one. This means that if you make several changes, you can save just certain ones without being stuck with every change all at once. (You can also "git add" with multiple file names on the same line. Or you could just type "git add ." to add everything, but I feel that tends to cause more mistakes.)
 
-7. Commit your changes. "git commit" only works on whatever changes have been staged. If I hadn't done the "git add" step, git commit would do nothing. But I did add the file, so when I type:
+- 7. Commit your changes. `git commit` only works on whatever changes have been staged. If I hadn't done the "git add" step, git commit would do nothing. But I did add the file, so when I type:
 
 `$ git commit -m "Added my name to README"`
 
@@ -59,7 +59,7 @@ At this point, the edit-readme-file branch on my own computer knows that I made 
 
 So what now? I'm at a fork in the road. I have a choice of ways I could get the work onto Github. My method depends on whether I am working with other people.
 
-If I am working with others, we all make a rule that nobody commits code to "master" without allowing someone else to take a look and approve it. Not all working groups do this, but it's considered a best practice for code quality and general politeness. Going this route, I would merge through a Github pull request. 
+If I am working with others, we all agree that nobody commits code to "master" without allowing someone else to take a look and approve it. Not all working groups do this, but it's considered a best practice for code quality and general politeness. Going this route, I would merge through a Github pull request. 
 
 If I'm just working by myself, I can merge my changes directly into my local "master" and then push "master" to Github.
 
