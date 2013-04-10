@@ -118,7 +118,7 @@ OKAY. Now, remember your working branch name (git status will tell you if you fo
 
 Ok, you're on master. Now's a good time to do a git pull on master to make very sure that's up to date: (Do it anyway, even if you're the sole contributor, to get in the habit)
 
-`$ git pull origin master
+`$ git pull origin master`
 
 Assuming that all went fine, do your merge!
 
