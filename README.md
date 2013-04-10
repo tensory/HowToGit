@@ -15,7 +15,7 @@ Let's say I'm working on a repository, and my goal today is to add my name to th
 	Click the "HTTP" button on the repo's page. Copy the repository URL (it starts with https and ends with .git) to the clipboard and paste it after `git clone `. Now you can press Enter.
 
 	For my repo on Github named "Treasury" this looks like:
-	`$ git clone https://github.com/tensory/Face.git`
+	`$ git clone https://github.com/tensory/Treasury.git`
 
 3. Go into the newly created repo directory. For me this would be `/Users/ari/Projects/Treasury/`.
 
