@@ -1,6 +1,6 @@
 # How to Git
 
-This assumes you are comfortable using the OSX terminal to change directories and look at their contents using the `cd` and `ls` commands.
+This assumes you are comfortable using the OSX or Linux terminal to change directories and look at their contents using the `cd` and `ls` commands.
 
 There is a difference between using Github and using git. "git" in lowercase is the name of the version control system software. "Github" is a website where many millions of git repositories are mirrored and there are graphical tools for looking at them and sharing them. 
 
@@ -10,7 +10,7 @@ Let's say I'm working on a repository, and my goal today is to add my name to th
 
 1. Go to a directory on your computer where you'd like to maintain projects. I have a `/Users/ari/Projects` directory where all my random project repos live. Inside that, __do not__ create a directory just for your new project, because `git clone` will create it for you.
 
-2. Clone the repository. In your terminal window, type `git clone ` with a space after the word 'clone' but do not press Enter yet. 
+2. Go to the URL of the Github repository. You're going to "clone" it on your computer. In your terminal window, type `git clone ` with a space after the word 'clone' but do not press Enter yet. 
 
 	Click the "HTTP" button on the repo's page. Copy the repository URL (it starts with https and ends with .git) to the clipboard and paste it after `git clone `. Now you can press Enter.
 
@@ -42,6 +42,7 @@ Let's say I'm working on a repository, and my goal today is to add my name to th
 	The first two steps, add and commit, make changes to your local repository on your computer. Push means to push the changes to the source repository.
 
 	Before you do anything else, type git status:
+	
 	`$ git status`
 
 	I would see a list of "unstaged" changes with one entry, README.md, which is the same file as I just edited.
@@ -58,13 +59,13 @@ Let's say I'm working on a repository, and my goal today is to add my name to th
 
 	git goes ahead and commits the README.md edit, with a log message that says "Added my name to README". 
 
-	Now I could, if I wanted to, type `git log` and see a record of that change. git log  shows the most recent change at the top.
+	Now I could, if I wanted to, type `git log` and see a record of that change. `git log`  shows the most recent change at the top.
 
 	At this point, the edit-readme-file branch on my own computer knows that I made the change to README.md. But, the "master" branch doesn't know about that change yet, and neither does Github. If my computer hard drive died right now, my work would not be on Github anywhere.
 
-	So what now? I'm at a fork in the road. I have a choice of ways I could get the work onto Github. My method depends on whether I am working with other people.
+8. So what now? I'm at a fork in the road. I have a choice of ways I could get the work onto Github. My method depends on whether I am working with other people.
 
-	If I am working with others, we all agree that nobody commits code to "master" without allowing someone else to take a look and approve it. Not all working groups do this, but it's considered a best practice for code quality and general politeness. Going this route, I would merge through a Github pull request. 
+	If I am working with others, we all agree to a standard that nobody commits code to "master" without allowing someone else to take a look and approve it. Not all working groups do this, but it's considered a best practice for code quality and general politeness. Going this route, I would merge through a Github pull request. 
 
 	If I'm just working by myself, I can merge my changes directly into my local "master" and then push "master" to Github.
 
