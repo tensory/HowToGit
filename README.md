@@ -8,10 +8,11 @@ Let's say I'm working on a repository, and my goal today is to add my name to th
 
 0. Start with a Github account. Make sure you know your username and password.
 
-1. Go to a directory on your computer where you'd like to maintain projects. I have a /Users/ari/Projects directory where all my random project repos live. Inside that, do not create a directory just for your new project, because "git clone" will create it for you.
-2. Clone the repository. In your terminal window, type "git clone " with a space after the word 'clone' but do not press Enter yet. 
+1. Go to a directory on your computer where you'd like to maintain projects. I have a `/Users/ari/Projects` directory where all my random project repos live. Inside that, __do not__ create a directory just for your new project, because `git clone` will create it for you.
 
-	Click the "HTTP" button on the repo's page. Copy the repository URL (it starts with https and ends with .git) to the clipboard and paste it after "git clone ". Now you can press Enter.
+2. Clone the repository. In your terminal window, type `git clone ` with a space after the word 'clone' but do not press Enter yet. 
+
+	Click the "HTTP" button on the repo's page. Copy the repository URL (it starts with https and ends with .git) to the clipboard and paste it after `git clone `. Now you can press Enter.
 
 	For my repo on Github named "Treasury" this looks like:
 	`$ git clone https://github.com/tensory/Face.git`
@@ -24,50 +25,54 @@ Let's say I'm working on a repository, and my goal today is to add my name to th
 
 	A branch is a version of the repository where you can make changes without messing up the main version (called "master"). If you're ever unhappy with how the changes are going in your branch, you can just delete the whole thing and start fresh, without messing up master.
 
-	Think of a name for your new branch that will help you remember what you intend to do with it. It's best to make a new branch any time you have a specific task in mind. Use the "git checkout" command to set up the branch.
+	Think of a name for your new branch that will help you remember what you intend to do with it. It's best to make a new branch any time you have a specific task in mind. Use the `git checkout` command to set up the branch.
 
-`$ git checkout -b edit-readme-file master`
+	`$ git checkout -b edit-readme-file master`
 
-In English this would mean "Check out a new branch from 'master' and call it 'edit-readme-file'". However, for the git checkout command, the new branch name comes before the origin name.
+	In English this would mean "Check out a new branch from 'master' and call it 'edit-readme-file'". However, for the git checkout command, the new branch name comes before the origin name.
 
-Checking out a branch is kind of like changing a TV channel. Once you enter a "git checkout" command, you would say you are "on that branch". If you were to type "git checkout master" you would be back on the "master" branch.
+	Checking out a branch is kind of like changing a TV channel. Once you enter a `git checkout` command, you would say you are "on that branch". If you were to type `git checkout master` you would be back on the "master" branch.
 
 5. Start making changes. Here I would look for a file called README.md in my project and edit it in a text editor to add my name. 
 
-6. Once done making a change, you need to tell git about the changed file so that it knows you are done. This is done in two steps, called 'add' and 'commit'.
+6. Once done making a change, you need to tell git about the changed file so that it knows you are done. 
 
-First, type git status:
-`$ git status`
+	__Core git flow: Add, Commit, Push__ 
+	
+	The first two steps, add and commit, make changes to your local repository on your computer. Push means to push the changes to the source repository.
 
-I would see a list of "unstaged" changes with one entry, README.md, which is the same file as I just edited.
+	Before you do anything else, type git status:
+	`$ git status`
 
-So I tell git to "add" the changes:
+	I would see a list of "unstaged" changes with one entry, README.md, which is the same file as I just edited.
 
-`$ git add README.md`
+	So I tell git to "add" the changes:
 
-Now if I type `git status` again, README.md has been upgraded to "staged" status, and I have no other unstaged changes. The git add command expects you to add files one by one. This means that if you make several changes, you can save just certain ones without being stuck with every change all at once. (You can also "git add" with multiple file names on the same line. Or you could just type "git add ." to add everything, but I feel that tends to cause more mistakes.)
+	`$ git add README.md`
 
-- 7. Commit your changes. `git commit` only works on whatever changes have been staged. If I hadn't done the "git add" step, git commit would do nothing. But I did add the file, so when I type:
+	Now if I type `git status` again, README.md has been upgraded to "staged" status, and I have no other unstaged changes. The git add command expects you to add files one by one. This means that if you make several changes, you can save just certain ones without being stuck with every change all at once. (You can also `git add` with multiple file names on the same line. Or you could just type `git add .` with a dot to add everything, but I feel that tends to cause more mistakes.)
 
-`$ git commit -m "Added my name to README"`
+7. Commit your changes. `git commit` only works on whatever changes have been staged. If I hadn't done the `git add` step, git commit would do nothing. But I did add the file, so when I type:
 
-git goes ahead and commits the README.md edit, with a log message that says "Added my name to README". 
+	`$ git commit -m "Added my name to README"`
 
-Now I could, if I wanted to, type "git log" and see a record of that change. git log  shows the most recent change at the top.
+	git goes ahead and commits the README.md edit, with a log message that says "Added my name to README". 
 
-At this point, the edit-readme-file branch on my own computer knows that I made the change to README.md. But, the "master" branch doesn't know about that change yet, and neither does Github. If my computer hard drive died right now, my work would not be on Github anywhere.
+	Now I could, if I wanted to, type `git log` and see a record of that change. git log  shows the most recent change at the top.
 
-So what now? I'm at a fork in the road. I have a choice of ways I could get the work onto Github. My method depends on whether I am working with other people.
+	At this point, the edit-readme-file branch on my own computer knows that I made the change to README.md. But, the "master" branch doesn't know about that change yet, and neither does Github. If my computer hard drive died right now, my work would not be on Github anywhere.
 
-If I am working with others, we all agree that nobody commits code to "master" without allowing someone else to take a look and approve it. Not all working groups do this, but it's considered a best practice for code quality and general politeness. Going this route, I would merge through a Github pull request. 
+	So what now? I'm at a fork in the road. I have a choice of ways I could get the work onto Github. My method depends on whether I am working with other people.
 
-If I'm just working by myself, I can merge my changes directly into my local "master" and then push "master" to Github.
+	If I am working with others, we all agree that nobody commits code to "master" without allowing someone else to take a look and approve it. Not all working groups do this, but it's considered a best practice for code quality and general politeness. Going this route, I would merge through a Github pull request. 
 
-Let's look at it both ways. Skip to method 2 if you're working without collaborators.
+	If I'm just working by myself, I can merge my changes directly into my local "master" and then push "master" to Github.
+
+	Let's look at it both ways. Skip to method 2 if you're working without collaborators.
 
 ## Merge Method 1: Collaborative Merging Through Github
 
-Github has a very nice graphical UI that makes it easy to see what changes someone is proposing to push into a branch.  So first I check that I am ready to push. If "git log" shows the commit message that I care about, I'm ready to push the branch.
+Github has a very nice graphical UI that makes it easy to see what changes someone is proposing to push into a branch.  So first I check that I am ready to push. If `git log` shows the commit message that I care about, I'm ready to push the branch.
 
 I type:
 
@@ -98,13 +103,13 @@ When you are totally happy, and so is your collaborator, one of you can hit the 
 
 Use this method if you're developing by yourself and you're only interested in getting your branch changes into master, without a review step.
 
-Once you feel you are done with your working branch, do a "git status":
+Once you feel you are done with your working branch, do a `git status`:
 
 `$ git status`
 
 If you see any files that are STAGED (added) but NOT COMMITTED, git will not let you continue with this process. Unstaged files will be ignored, committed files will be included, but staged files stand in the way.
 
-If you want to unstage anything, you can do it with git reset (you can google it for the exact process.) Now's the time to do one last "git commit -m" if you see any stragglers. But let's assume that all the files you wanted to commit are committed.
+If you want to unstage anything, you can do it with git reset (you can google it for the exact process.) Now's the time to do one last `git commit -m` if you see any stragglers. But let's assume that all the files you wanted to commit are committed.
 
 OKAY. Now, remember your working branch name (git status will tell you if you forgot). Now change to master:
 
