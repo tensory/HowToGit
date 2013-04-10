@@ -136,5 +136,5 @@ Go to Github and admire your freshly merged master branch. Back on the command l
 
 ---
 
-Thanks for reading! Please direct comments/improvements to me at alacenski@gmail.com
+Thanks for reading! Please direct comments/improvements to me at alacenski@gmail.com or send me a pull request.
 
