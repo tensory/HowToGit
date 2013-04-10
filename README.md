@@ -1,12 +1,13 @@
-= How to Git
+# How to Git
 
-This assumes you are comfortable using the OSX terminal to change directories and look at their contents using the 'cd' and 'ls' commands.
+This assumes you are comfortable using the OSX terminal to change directories and look at their contents using the `cd` and `ls` commands.
 
-There is a difference between using Github and using git. "git" in lowercase is the general name of the version control system software. "Github" is a website where many millions of git repositories are mirrored and there are graphical tools for looking at them and sharing them. 
+There is a difference between using Github and using git. "git" in lowercase is the name of the version control system software. "Github" is a website where many millions of git repositories are mirrored and there are graphical tools for looking at them and sharing them. 
 
-Let's say my goal is to add my name to the contributors listed in a README file for a  project that I am helping with. 
+Let's say I'm working on a repository, and my goal today is to add my name to the contributors listed in a README file. 
 
 0. Start with a Github account. Make sure you know your username and password.
+
 1. Go to a directory on your computer where you'd like to maintain projects. I have a /Users/ari/Projects directory where all my random project repos live. Inside that, do not create a directory just for your new project, because "git clone" will create it for you.
 2. Clone the repository. In your terminal window, type "git clone " with a space after the word 'clone' but do not press Enter yet. 
 
@@ -17,7 +18,11 @@ For my repo on Github named "Treasury" this looks like:
 
 3. Go into the newly created repo directory. For me this would be `/Users/ari/Projects/Treasury/`.
 
-4. Create a branch.* A branch is a version of the repository where you can make changes without messing up the main version (called "master"). If you're ever unhappy with how the changes are going in your branch, you can just delete the whole thing and start fresh, without messing up master.
+4. Create a branch.
+
+__Voice of Experience:__ Most git tutorials do not start with branching. I think everyone should do this right away. It will save you a lot of time untangling problems on master.
+
+A branch is a version of the repository where you can make changes without messing up the main version (called "master"). If you're ever unhappy with how the changes are going in your branch, you can just delete the whole thing and start fresh, without messing up master.
 
 Think of a name for your new branch that will help you remember what you intend to do with it. It's best to make a new branch any time you have a specific task in mind. Use the "git checkout" command to set up the branch.
 
@@ -32,13 +37,13 @@ Checking out a branch is kind of like changing a TV channel. Once you enter a "g
 6. Once done making a change, you need to tell git about the changed file so that it knows you are done. This is done in two steps, called 'add' and 'commit'.
 
 First, type git status:
-$ git status
+`$ git status`
 
 I would see a list of "unstaged" changes with one entry, README.md, which is the same file as I just edited.
 
 So I tell git to "add" the changes:
 
-$ git add README.md
+`$ git add README.md`
 
 Now if I type "git status" again, README.md has been upgraded to "staged" status, and I have no other unstaged changes. The git add command expects you to add files one by one. This means that if you make several changes, you can save just certain ones without being stuck with every change all at once. (You can also "git add" with multiple file names on the same line. Or you could just type "git add ." to add everything, but I feel that tends to cause more mistakes.)
 
@@ -60,7 +65,7 @@ If I'm just working by myself, I can merge my changes directly into my local "ma
 
 Let's look at it both ways. Skip to method 2 if you're working without collaborators.
 
-== Merge Method 1: Collaborative Merging Through Github ==
+## Merge Method 1: Collaborative Merging Through Github
 
 Github has a very nice graphical UI that makes it easy to see what changes someone is proposing to push into a branch.  So first I check that I am ready to push. If "git log" shows the commit message that I care about, I'm ready to push the branch.
 
@@ -89,13 +94,13 @@ When you're happy with the description, click "Send pull request". The resulting
 When you are totally happy, and so is your collaborator, one of you can hit the "Merge" button at the very bottom of the pull request page. By convention, you (and not the reviewer) would get to hit merge, as a little reward for all your hard work. :) 
 
 
-== Merge Method 2: Local Merging
+## Merge Method 2: Local Merging
 
 Use this method if you're developing by yourself and you're only interested in getting your branch changes into master, without a review step.
 
 Once you feel you are done with your working branch, do a "git status":
 
-$ git status
+`$ git status`
 
 If you see any files that are STAGED (added) but NOT COMMITTED, git will not let you continue with this process. Unstaged files will be ignored, committed files will be included, but staged files stand in the way.
 
@@ -103,31 +108,27 @@ If you want to unstage anything, you can do it with git reset (you can google it
 
 OKAY. Now, remember your working branch name (git status will tell you if you forgot). Now change to master:
 
-$ git checkout master
+`$ git checkout master`
 
 Ok, you're on master. Now's a good time to do a git pull on master to make very sure that's up to date: (Do it anyway, even if you're the sole contributor, to get in the habit)
 
-$ git pull origin master
+`$ git pull origin master
 
 Assuming that all went fine, do your merge!
 
-$ git merge edit-readme-file
+`$ git merge edit-readme-file`
  
 By default, git will automatically commit your merged branch. You can disable that, but it's fine most of the time. So, you've "added" and "committed" the branch files by doing the merge, so we come to the final step:
 
-$ git push origin master
+`$ git push origin master`
 
 THAT WAS EASY.
 
 Go to Github and admire your freshly merged master branch. Back on the command line, you can delete your finished branch with:
 
-$ git branch -D edit-readme-file
+`$ git branch -D edit-readme-file`
 
 ---
 
 Thanks for reading! Please direct comments/improvements to me at alacenski@gmail.com
-
-
-* Most git tutorials do not start with branching. I think everyone should do this right away. It will save you a lot of time untangling problems on master.
-
 
