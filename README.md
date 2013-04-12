@@ -122,7 +122,7 @@ Ok, you're on master. Now's a good time to do a git pull on master to make very 
 
 Assuming that all went fine, do your merge!
 
-__Just FYI:__ By default, git will automatically commit your merged branch. You can disable that, but it's fine most of the time. This merge attempt will open up your default command-line text editor, most likely vi or vim, and ask you to write a comment describing the merge. It will put some not-very-helpful text in there by default. You can edit the auto-comment to make it more descriptive. You will have to finish the merge by exiting vim with `:wq` or `:q!`. I just wanted to point this out so that you're not too startled by the context change.
+__Just FYI:__ By default, git will automatically commit your merged branch. You can disable that, but it's fine most of the time. This merge attempt may open up your default command-line text editor, most likely vi or vim, and ask you to write a comment describing the merge. It will put some not-very-helpful text in there by default. You can edit the auto-comment to make it more descriptive. You will have to finish the merge by exiting vim with `:wq` or `:q!`. I just wanted to point this out so that you're not too startled by the context change.
 
 `$ git merge edit-readme-file`
 
