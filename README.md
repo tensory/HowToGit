@@ -37,9 +37,9 @@ Let's say I'm working on a repository, and my goal today is to add my name to th
 
 6. Once done making a change, you need to tell git about the changed file so that it knows you are done. 
 
-	__Core git flow: Add, Commit, Push__ 
+	__Core git flow: Stage, Commit, Push__ 
 	
-	The first two steps, add and commit, make changes to your local repository on your computer. Push means to push the changes to the source repository.
+	The first two steps, stage and commit, make changes to your local repository on your computer. Push means to push the changes to the source repository.
 
 	Before you do anything else, type git status:
 	
@@ -47,13 +47,15 @@ Let's say I'm working on a repository, and my goal today is to add my name to th
 
 	I would see a list of "unstaged" changes with one entry, README.md, which is the same file as I just edited.
 
-	So I tell git to "add" the changes:
+	So I tell git to "stage" the changes:
 
-	`$ git add README.md`
+	`$ git stage README.md`
 
-	Now if I type `git status` again, README.md has been upgraded to "staged" status, and I have no other unstaged changes. The git add command expects you to add files one by one. This means that if you make several changes, you can save just certain ones without being stuck with every change all at once. (You can also `git add` with multiple file names on the same line. Or you could just type `git add .` with a dot to add everything, but I feel that tends to cause more mistakes.)
+	Now if I type `git status` again, README.md has been upgraded to "staged" status, and I have no other unstaged changes. The git stage command expects you to stage files one by one. This means that if you make several changes, you can save just certain ones without being stuck with every change all at once. (You can also `git stage` with multiple file names on the same line. Or you could just type `git stage .` with a dot to stage everything, but I feel that tends to cause more mistakes.)
 
-7. Commit your changes. `git commit` only works on whatever changes have been staged. If I hadn't done the `git add` step, git commit would do nothing. But I did add the file, so when I type:
+	You might see references to the "git add" command ‒ "git stage" and "git add" are aliases to the same operation, but "git stage" is more descriptive.
+
+7. Commit your changes. `git commit` only works on whatever changes have been staged. If I hadn't done the `git stage` step, git commit would do nothing. But I did stage the file, so when I type:
 
 	`$ git commit -m "Added my name to README"`
 
@@ -108,7 +110,7 @@ Once you feel you are done with your working branch, do a `git status`:
 
 `$ git status`
 
-If you see any files that are STAGED (added) but NOT COMMITTED, git will not let you continue with this process. Unstaged files will be ignored, committed files will be included, but staged files stand in the way.
+If you see any files that are STAGED but NOT COMMITTED, git will not let you continue with this process. Unstaged files will be ignored, committed files will be included, but staged files stand in the way.
 
 If you want to unstage anything, you can do it with git reset (you can google it for the exact process.) Now's the time to do one last `git commit -m` if you see any stragglers. But let's assume that all the files you wanted to commit are committed.
 
@@ -128,7 +130,7 @@ __Just FYI:__ By default, git will automatically commit your merged branch. You 
 
 Write your commit message and type `:wq` (colon w q, Enter). That's the vi quit command, not a git thing.
  
-So, you've "added" and "committed" the branch files by doing the merge, so we come to the final step:
+So, you've "staged" and "committed" the branch files by doing the merge, so we come to the final step:
 
 `$ git push origin master`
 
