@@ -85,19 +85,17 @@ This is the point where the git program on my computer will try talking to Githu
 
 This is really exciting. It means that I can ask to get my changes merged into the shared master, and it also means that anyone working with me is able to check out that branch (just the branch!) to add more work to it, again without messing up anyone's master.
 
-So, now that I have pushed, I go to the project repository page on Github and click the button near the page top that says "Pull Request".
+So, now that I have pushed, I go to the project repository page on Github. That'd be `https://github.com/tensory/Treasury`.
 
-A pull request is like a "proposed merge" of one branch into another branch. Typically you want to merge your working branch into master. It's called a pull request because from Github's point of view, you are creating a request to pull the working branch into the intended target (master.)  
+Github auto-detects that you just recently pushed a branch, and will probably display a yellow-tinted banner with a green button saying "Compare & pull request". Click this button if available. If for any reason this banner is not shown, you can still make a pull request by clicking "Pull requests" in the navigation column to the right.
 
-In the dropdown on the LEFT hand side, make sure master is selected. 
+Start off your pull request by checking that the branch targets look correct. A blue-tinted box above the pull request description will say something like "tensory:master ... tensory:edit-readme-file". You should read that as, "Into master, merge the branch named edit-readme-file." If any part of that looks wrong, click Edit to fix it. 
 
-In the dropdown on the RIGHT hand side, make sure your working branch is selected.
-
-Note the little tiny left-pointing arrow between the two columns, which is supposed to indicate the movement "into" master.
+Remember that on the LEFT side you want the name of the target branch that changes are going INTO, and on the RIGHT side is the branch name that you are about to merge into the target. "Master" is usually the target branch.
 
 You can optionally fill out the form that appears on the "Write" tab to help explain the intent of the changes you hope to merge. 
 
-When you're happy with the description, click "Send pull request". The resulting page can be shared with someone else, who has the opportunity to read and comment on your code. If you make more pushes to the same branch (perhaps in response to review comments), the pull request will automatically be updated with changes.
+When you're happy with the description, click "Send pull request". Then copy the URL of the resulting page and email it to someone else, who has the opportunity to read and comment on your code. If you make more pushes to the same branch (perhaps in response to review comments), the pull request will automatically be updated with changes.
 
 When you are totally happy, and so is your collaborator, one of you can hit the "Merge" button at the very bottom of the pull request page. By convention, you (and not the reviewer) would get to hit merge, as a little reward for all your hard work. :) 
 
