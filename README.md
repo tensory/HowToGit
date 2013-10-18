@@ -8,11 +8,11 @@ Let's say I'm working on a repository, and my goal today is to add my name to th
 
 0. Start with a Github account. Make sure you know your username and password.
 
-1. Go to a directory on your computer where you'd like to maintain projects. I have a `/Users/ari/Projects` directory where all my random project repos live. Inside that, __do not__ create a directory just for your new project, because `git clone` will create it for you.
+1. Go to a directory on your computer where you'd like to maintain projects. I have a `/Users/ari/Projects` directory where all my random projects live. Inside that, __do not__ create a directory just for your new project, because `git clone` will create it for you.
 
-2. Go to the URL of the Github repository. You're going to "clone" it on your computer. In your terminal window, type `git clone ` with a space after the word 'clone' but do not press Enter yet. 
+2. Go to the URL of the Github repository. This will be something like `https://github.com/tensory/Treasury`. You're going to "clone" it on your computer. In your terminal window, type `git clone ` with a space after the word 'clone' but do not press Enter yet. 
 
-	Click the "HTTP" button on the repo's page. Copy the repository URL (it starts with https and ends with .git) to the clipboard and paste it after `git clone `. Now you can press Enter.
+	Click the "HTTPS" link in the right-hand-side column on the repo's main page. Copy the repository URL (it starts with https and ends with .git) to the clipboard and paste it after `git clone `. Now you can press Enter.
 
 	For my repo on Github named "Treasury" this looks like:
 	`$ git clone https://github.com/tensory/Treasury.git`
@@ -21,7 +21,7 @@ Let's say I'm working on a repository, and my goal today is to add my name to th
 
 4. Create a branch.
 
-	__Voice of Experience:__ Most git tutorials do not start with branching. I think everyone should do this right away. It will save you a lot of time untangling problems on master.
+	__Important:__ Most git tutorials do not start with branching. I think everyone should learn to do this right away. Knowing how to work with branches will save you a lot of time untangling problems on master.
 
 	A branch is a version of the repository where you can make changes without messing up the main version (called "master"). If you're ever unhappy with how the changes are going in your branch, you can just delete the whole thing and start fresh, without messing up master.
 
@@ -122,11 +122,11 @@ Ok, you're on master. Now's a good time to do a git pull on master to make very 
 
 Assuming that all went fine, do your merge!
 
-__Just FYI:__ By default, git will automatically commit your merged branch. You can disable that, but it's fine most of the time. This merge attempt may open up your default command-line text editor, most likely vi or vim, and ask you to write a comment describing the merge. It will put some not-very-helpful text in there by default. You can edit the auto-comment to make it more descriptive. You will have to finish the merge by exiting vim with `:wq` or `:q!`. I just wanted to point this out so that you're not too startled by the context change.
+__Just FYI:__ By default, git will automatically commit your merged branch. You can disable that, but it's fine most of the time. This merge attempt may open up your default command-line text editor, most likely vi or vim, and ask you to write a comment describing the merge. It will put some not-very-helpful text in there by default. You can edit the auto-comment to make it more descriptive. You will have to finish the merge by exiting vim with `:wq`. I just wanted to point this out so that you're not too startled by the context change.
 
 `$ git merge edit-readme-file`
 
-Write your commit message and type `:wq` (colon w q, Enter). That's the vi quit command, not a git thing.
+Write your commit message and type `:wq` (colon w q, Enter). That's the vi command to save-and-quit, not a git thing.
  
 So, you've "staged" and "committed" the branch files by doing the merge, so we come to the final step:
 
