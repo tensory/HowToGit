@@ -1,6 +1,6 @@
 # How to Git
 
-This assumes you are comfortable using the OSX or Linux terminal to change directories and look at their contents using the `cd` and `ls` commands.
+This assumes you are comfortable using the OSX or Linux terminal to change directories and look at their contents using the `cd` and `ls` commands. It also assumes that you have the command-line `git` program installed, and not a graphical git program.
 
 There is a difference between using Github and using git. "git" in lowercase is the name of the version control system software. "Github" is a website where many millions of git repositories are mirrored and there are graphical tools for looking at them and sharing them. 
 
